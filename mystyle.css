@@ -1,0 +1,10 @@
+body {
+background-color: #FFD727;
+}
+h1 {
+    font-size: 8rem;
+}
+#mainContainer{
+    background-color: #FF6702;
+    box-shadow: 5px, 5px, 5px, 5px ;
+}
