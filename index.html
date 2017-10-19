@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Budge</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <link rel="stylesheet" href="mystyle.css">
 <meta name="description" content="Free Budgeting tool">
 <meta name="keywords" content="Free Budgeting tool, save, spend, how to budget, monthly budget">
@@ -14,37 +14,41 @@
 </header>
 <div class="container well" id="mainContainer">
   <h2 class="text-center">Income</h2>
-  <div class="row">
-    <div class="column-md-5">
-      <h4>Source</h4>
+  <div class="container">
+    <div class="row">
+      <div class="column-md-4 col-sm-3">
+        <h4>Source</h4>
+      </div>
+      <div class="column-md-4 col-sm-3" id="amounth4">
+        <h4>Amount</h4>
+      </div>
+    </div>
+    <form class="form-inline">
       <div class="form-group">
         <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <input type="number" class="form-control" id="amount#1" placeholder="Enter Amount" name="Amount">
       </div>
-      <div class="column-md-5">
-        <h4>Amount</h4>
-        <div class="form-group">
-          <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-        </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
+        <input type="number" class="form-control" id="amount#2" placeholder="Enter Amount" name="amount">
       </div>
-    </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
+        <input type="number" class="form-control" id="amount#1" placeholder="Enter Amount" name="Amount">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
+        <input type="number" class="form-control" id="amount#1" placeholder="Enter Amount" name="Amount">
+      </div>
+    </form>
   </div>
-
-<form class="form-inline">
-    <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="email" class="form-control" id="email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
-    </div>
-    <br>
-    <button class="btn btn-default">Calculate</button>
-    <button class="btn btn-default">Next<small> To Expenses</small></button>
-    <p class="bold">Total<textarea></textarea></p>
-  </div>
-  <footer>
-    <p class="text-center">Created by <b><a href = "https://github.com/ItzhakS">Itzhak Shachnovitz</a></b></p>
-  </footer>
+  <br>
+  <button class="btn btn-primary" id = "calculatebtn" >Calculate</button>
+  
+  <p class="bold">Total<textarea></textarea></p>
+  <button class="btn btn-default">Next-<small> To Expenses</small></button>
+</div>
+<footer>
+  <p class="text-center">Created by<a href="https://github.com/ItzhakS"><strong>Itzhak Shachnovitz</strong></a></p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
