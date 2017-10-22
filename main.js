@@ -1,0 +1,1 @@
+var amount1 = document.getElementById("amount#1")
