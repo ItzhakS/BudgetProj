@@ -10,9 +10,9 @@ amount3.addEventListener("input", add);
 amount4.addEventListener("input", add);
 
 function add(){
-    var num1 = parseFloat(amount1.value);
-    var num2 = parseFloat(amount2.value);
-    var num3 = parseFloat(amount3.value);
-    var num4 = parseFloat(amount4.value);
+    var num1 = parseFloat(amount1.value) || 0;
+    var num2 = parseFloat(amount2.value) || 0;
+    var num3 = parseFloat(amount3.value) || 0;
+    var num4 = parseFloat(amount4.value) || 0;
     amountTotal.innerHTML = num1 + num2 + num3 + num4;
 };

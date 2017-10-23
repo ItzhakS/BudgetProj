@@ -8,5 +8,13 @@ h1 {
     box-shadow: 5px, 5px, 5px, 5px ;
 }
 #amounth4{
-    padding-left: 5%;
+    margin-left: 5%;
+}
+#srcColumn{
+    padding-right: 28px;
+    padding-left: 0px;
+}
+#amntColumn{
+    padding-right: 28px;
+    padding-left: 0px;
 }
