@@ -1,20 +1,30 @@
 body {
 background-color: rgba(109, 226, 12, 0.88);
+/* Money color background-color: #216C2A; */
 }
 h1 {
     font-size: 8rem;
 }
 #mainContainer{
-    box-shadow: 5px, 5px, 5px, 5px ;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
 }
 #amounth4{
     margin-left: 5%;
 }
-#srcColumn{
+#srcColumn, #amntColumn {
     padding-right: 28px;
     padding-left: 0px;
 }
-#amntColumn{
-    padding-right: 28px;
-    padding-left: 0px;
+#next-btn {
+    float: right;
 }
+#calculate-btn{
+    margin-left: 43.5%;
+}
+#add-btn{
+    border-radius: 50%;
+    float: right;
+}
+/* .hid:hover {
+    display: inline;
+} */
