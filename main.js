@@ -16,3 +16,13 @@ function add(){
     var num4 = parseFloat(amount4.value) || 0;
     amountTotal.innerHTML = num1 + num2 + num3 + num4;
 };
+
+var expenseContainer = document.getElementById("expenseContainer");
+var mainContainer = document.getElementById("mainContainer");
+var nextBtn = document.getElementById("next-btn");
+nextBtn.addEventListener("click", toExpenses);
+
+function toExpenses(){
+    expenseContainer.setProperty(display, inline);
+    mainContainer.setProperty(display, none);
+};

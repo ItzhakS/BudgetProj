@@ -42,10 +42,43 @@
   </div>
   <button class="btn btn-success" id = "add-btn"><span class="glyphicon glyphicon-plus"></span></button><span class="hid">Add Field</span>
   <br>
+  <p class="lead text-center">Total: <span id="sum-total"></span></p>
+  <button class="btn btn-default" id="next-btn">Next-<small> To Expenses</small></button>
+</div>
+<div class="container well" id="expenseContainer">
+  <h2 class="text-center">Expenses</h2>
+  <div class="container">
+    <div class="row">
+      <div class="column-md-6 col-sm-6 col-xs-6" id ="srcColumn">
+        <h4>Expense</h4>
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
+            <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
+            <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
+            <input type="text" class="form-control" id="incomeSrc" placeholder="Enter Income Source" name="incomeSrc">
+          </div>
+        </form>
+      </div>
+      <div class="column-md-6 col-sm-6 col-xs-6" id ="amntColumn">
+        <h4>Amount</h4>
+        <form>
+          <div class="form-group">
+            <input type="number" class="form-control" id="amount#1" placeholder="Enter Amount" name="Amount">
+            <input type="number" class="form-control" id="amount#2" placeholder="Enter Amount" name="Amount">
+            <input type="number" class="form-control" id="amount#3" placeholder="Enter Amount" name="Amount">
+            <input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="Amount">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" id = "add-btn"><span class="glyphicon glyphicon-plus"></span></button><span class="hid">Add Field</span>
+  <br>
   <button class="btn btn-primary" id = "calculate-btn" >Calculate</button>
   <br>
   <p class="lead text-center">Total: <span id="sum-total"></span></p>
-  <button class="btn btn-default" id="next-btn">Next-<small> To Expenses</small></button>
+  <button class="btn btn-default" id="back-btn">Back-<small> To Income</small></button>
 </div>
 <footer>
   <p class="text-center">Created by <a href="https://github.com/ItzhakS"><strong>Itzhak Shachnovitz</strong></a></p>
