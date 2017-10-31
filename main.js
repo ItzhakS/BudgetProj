@@ -32,3 +32,24 @@ function toIncome(){
     expenseContainer.className = "hide"; 
     mainContainer.className = "container well";
 };
+var expamount1 = document.getElementById("expamount#1");
+var expamount2 = document.getElementById("expamount#2");
+var expamount3 = document.getElementById("expamount#3");
+var expamount4 = document.getElementById("expamount#4");
+var expAmountTotal = document.getElementById("expSum-total");
+
+expamount1.addEventListener("input", add2);
+expamount2.addEventListener("input", add2);
+expamount3.addEventListener("input", add2);
+expamount4.addEventListener("input", add2);
+
+function add2(){
+    var num1 = parseFloat(expamount1.value) || 0;
+    var num2 = parseFloat(expamount2.value) || 0;
+    var num3 = parseFloat(expamount3.value) || 0;
+    var num4 = parseFloat(expamount4.value) || 0;
+    expAmountTotal.innerHTML = num1 + num2 + num3 + num4;
+};
+// for (var i = 0; i < 4; i++){
+//     var expamount[i]
+// }
