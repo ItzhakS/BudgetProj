@@ -31,9 +31,9 @@ h1 {
     border-radius: 50%;
     float: right;
 }
-#expenseContainer{
+/* #expenseContainer{
     display: none;
-}
-/* .hid:hover {
+} 
+ .hid:hover {
     display: inline;
-} */
+} 
