@@ -20,9 +20,15 @@ function add(){
 var expenseContainer = document.getElementById("expenseContainer");
 var mainContainer = document.getElementById("mainContainer");
 var nextBtn = document.getElementById("next-btn");
+var backBtn = document.getElementById("back-btn");
 nextBtn.addEventListener("click", toExpenses);
+backBtn.addEventListener("click", toIncome);
 
 function toExpenses(){
-    expenseContainer.setProperty(display, inline);
-    mainContainer.setProperty(display, none);
+    mainContainer.className = "hide"; 
+    expenseContainer.className = "container well";
+};
+function toIncome(){
+    expenseContainer.className = "hide"; 
+    mainContainer.className = "container well";
 };
