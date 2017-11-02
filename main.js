@@ -15,14 +15,24 @@ function add(){
     var num3 = parseFloat(amount3.value) || 0;
     var num4 = parseFloat(amount4.value) || 0;
     amountTotal.innerHTML = num1 + num2 + num3 + num4;
+    return amountTtl = num1 + num2 + num3 + num4;
 };
 
 var expenseContainer = document.getElementById("expenseContainer");
 var mainContainer = document.getElementById("mainContainer");
 var nextBtn = document.getElementById("next-btn");
 var backBtn = document.getElementById("back-btn");
+var backBtn2 = document.getElementById("back-btn2");
+var calculate = document.getElementById("calculate-btn");
+var diffContainer = document.getElementById("diffContainer")
+var diff = document.getElementById("diff");
+var amountTtl = 0
+var expAmountTtl = 0
+
 nextBtn.addEventListener("click", toExpenses);
 backBtn.addEventListener("click", toIncome);
+backBtn2.addEventListener("click", toExpenses);
+calculate.addEventListener("click", toDiff)
 
 function toExpenses(){
     mainContainer.className = "hide"; 
@@ -32,6 +42,12 @@ function toIncome(){
     expenseContainer.className = "hide"; 
     mainContainer.className = "container well";
 };
+function toDiff(){
+    expenseContainer.className = "hide"; 
+    mainContainer.className = "hide";
+    diffContainer.className = "container well";
+    diff.innerHTML = amountTtl - expAmountTtl;
+}
 var expamount1 = document.getElementById("expamount#1");
 var expamount2 = document.getElementById("expamount#2");
 var expamount3 = document.getElementById("expamount#3");
@@ -49,6 +65,7 @@ function add2(){
     var num3 = parseFloat(expamount3.value) || 0;
     var num4 = parseFloat(expamount4.value) || 0;
     expAmountTotal.innerHTML = num1 + num2 + num3 + num4;
+    return expAmountTtl = num1 + num2 + num3 + num4;
 };
 // for (var i = 0; i < 4; i++){
 //     var expamount[i]
