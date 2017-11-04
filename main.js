@@ -28,6 +28,8 @@ var diffContainer = document.getElementById("diffContainer")
 var diff = document.getElementById("diff");
 var amountTtl = 0
 var expAmountTtl = 0
+var incomeTotal = document.getElementById("incomeTotal");
+var expenseTotal = document.getElementById("expenseTotal");
 
 nextBtn.addEventListener("click", toExpenses);
 backBtn.addEventListener("click", toIncome);
@@ -47,6 +49,8 @@ function toDiff(){
     mainContainer.className = "hide";
     diffContainer.className = "container well";
     diff.innerHTML = amountTtl - expAmountTtl;
+    incomeTotal.innerHTML = amountTtl;
+    expenseTotal.innerHTML = expAmountTtl;
 }
 var expamount1 = document.getElementById("expamount#1");
 var expamount2 = document.getElementById("expamount#2");
