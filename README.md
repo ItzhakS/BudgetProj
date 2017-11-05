@@ -10,13 +10,15 @@ Goal for base App functions:
   
   Calculate difference
   
-  Button to add fields
+  Print highest income source and highest expense
   
   Display Total Income, Total Expenses and Difference
   
 Future Additions:
 
   Graph Data
+
+  Button to add fields
 
   (Create downloadable pdf file of data)
   
