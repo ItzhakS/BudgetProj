@@ -39,10 +39,12 @@ calculate.addEventListener("click", toDiff)
 function toExpenses(){
     mainContainer.className = "hide"; 
     expenseContainer.className = "container well";
+    diffContainer.className = "hide";
 };
 function toIncome(){
     expenseContainer.className = "hide"; 
     mainContainer.className = "container well";
+    diffContainer.className = "hide";
 };
 function toDiff(){
     expenseContainer.className = "hide"; 
