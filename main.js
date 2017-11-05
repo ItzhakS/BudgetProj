@@ -23,6 +23,7 @@ var mainContainer = document.getElementById("mainContainer");
 var nextBtn = document.getElementById("next-btn");
 var backBtn = document.getElementById("back-btn");
 var backBtn2 = document.getElementById("back-btn2");
+var backBtn3 = document.getElementById("back-btn3");
 var calculate = document.getElementById("calculate-btn");
 var diffContainer = document.getElementById("diffContainer")
 var diff = document.getElementById("diff");
@@ -34,6 +35,7 @@ var expenseTotal = document.getElementById("expenseTotal");
 nextBtn.addEventListener("click", toExpenses);
 backBtn.addEventListener("click", toIncome);
 backBtn2.addEventListener("click", toExpenses);
+backBtn3.addEventListener("click", toIncome);
 calculate.addEventListener("click", toDiff)
 
 function toExpenses(){
