@@ -20,10 +20,10 @@
         <h4>Source</h4>
         <form>
           <div class="form-group">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
+            <input type="text" class="form-control" id="incomeSrc1" placeholder="Enter Source" name="incomeSrc">
+            <input type="text" class="form-control" id="incomeSrc2" placeholder="Enter Source" name="incomeSrc">
+            <input type="text" class="form-control" id="incomeSrc3" placeholder="Enter Source" name="incomeSrc">
+            <input type="text" class="form-control" id="incomeSrc4" placeholder="Enter Source" name="incomeSrc">
           </div>
         </form>
       </div>
@@ -31,10 +31,10 @@
         <h4>Amount</h4>
         <form>
           <div class="form-group">
-            <input type="number" class="form-control" id="amount#1" placeholder="Enter Amount" name="Amount">
-            <input type="number" class="form-control" id="amount#2" placeholder="Enter Amount" name="Amount">
-            <input type="number" class="form-control" id="amount#3" placeholder="Enter Amount" name="Amount">
-            <input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="Amount">
+            <input type="number" class="form-control" id="amount#1" placeholder="Enter Amount" name="incAmount">
+            <input type="number" class="form-control" id="amount#2" placeholder="Enter Amount" name="incAmount">
+            <input type="number" class="form-control" id="amount#3" placeholder="Enter Amount" name="incAmount">
+            <input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="incAmount">
           </div>
         </form>
       </div>
@@ -53,10 +53,10 @@
         <h4>Expense</h4>
         <form>
           <div class="form-group">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
-            <input type="text" class="form-control" id="expense-name" placeholder="Enter Expense" name="expense-name">
+            <input type="text" class="form-control" id="expenseName1" placeholder="Enter Expense" name="expense-name">
+            <input type="text" class="form-control" id="expenseName2" placeholder="Enter Expense" name="expense-name">
+            <input type="text" class="form-control" id="expenseName3" placeholder="Enter Expense" name="expense-name">
+            <input type="text" class="form-control" id="expenseName4" placeholder="Enter Expense" name="expense-name">
           </div>
         </form>
       </div>
@@ -64,10 +64,10 @@
         <h4>Amount</h4>
         <form>
           <div class="form-group">
-            <input type="number" class="form-control" id="expamount#1" placeholder="Enter Amount" name="Amount">
-            <input type="number" class="form-control" id="expamount#2" placeholder="Enter Amount" name="Amount">
-            <input type="number" class="form-control" id="expamount#3" placeholder="Enter Amount" name="Amount">
-            <input type="number" class="form-control" id="expamount#4" placeholder="Enter Amount" name="Amount">
+            <input type="number" class="form-control" id="expamount#1" placeholder="Enter Amount" name="expAmount">
+            <input type="number" class="form-control" id="expamount#2" placeholder="Enter Amount" name="expAmount">
+            <input type="number" class="form-control" id="expamount#3" placeholder="Enter Amount" name="expAmount">
+            <input type="number" class="form-control" id="expamount#4" placeholder="Enter Amount" name="expAmount">
           </div>
         </form>
       </div>
@@ -82,8 +82,10 @@
 </div>
 <div class="container well hide" id="diffContainer">
   <h2 class="text-center">Difference</h2>
-  <p class="lead text-center">Total Income: <span id="incomeTotal"></span></p>
-  <p class="lead text-center">Total Expenses: <span id="expenseTotal"></span></p>
+  <p class="lead text-center">Total Income: <span  id="incomeTotal"></span>
+    <p class = "text-center">Main Income: <span id = "mainIncome"></span></p></p>
+  <p class="lead text-center">Total Expenses: <span  id="expenseTotal"></span>
+    <p class = "text-center">Main Expense: <span id = "mainExpense"></span></p></p>
   <p class="lead text-center">Difference: <span id="diff"></span></p>
   <br>
   <button class="btn btn-default" id="back-btn3">Back-<small> To Income</small></button>
