@@ -15,7 +15,7 @@ function add(){
     var num3 = parseFloat(amount3.value) || 0;
     var num4 = parseFloat(amount4.value) || 0;
     amountTotal.innerHTML = num1 + num2 + num3 + num4;
-    return amountTtl = num1 + num2 + num3 + num4;
+    amountTtl = num1 + num2 + num3 + num4;
 };
 
 var expenseContainer = document.getElementById("expenseContainer");
@@ -31,7 +31,29 @@ var amountTtl = 0
 var expAmountTtl = 0
 var incomeTotal = document.getElementById("incomeTotal");
 var expenseTotal = document.getElementById("expenseTotal");
+var expamount1 = document.getElementById("expamount#1");
+var expamount2 = document.getElementById("expamount#2");
+var expamount3 = document.getElementById("expamount#3");
+var expamount4 = document.getElementById("expamount#4");
+var expAmountTotal = document.getElementById("expSum-total");
+var incomeSrc1 = document.getElementById("incomeSrc1");
+var incomeSrc2 = document.getElementById("incomeSrc2");
+var incomeSrc3 = document.getElementById("incomeSrc3");
+var incomeSrc4 = document.getElementById("incomeSrc4");
+var expenseName1 = document.getElementById("expenseName1");
+var expenseName2 = document.getElementById("expenseName2");
+var expenseName3 = document.getElementById("expenseName3");
+var expenseName4 = document.getElementById("expenseName4");
+var mainIncome = document.getElementById("mainIncome");
+var mainExpense = document.getElementById("mainExpense");
+var inputAmount = document.getElementsByName("incAmount");
+var amountArr = [];
 
+
+//     amountArr = [].map.call(inputAmount, function( input ) {
+//     return parseFloat(input.value);
+// });
+ 
 nextBtn.addEventListener("click", toExpenses);
 backBtn.addEventListener("click", toIncome);
 backBtn2.addEventListener("click", toExpenses);
@@ -42,6 +64,10 @@ function toExpenses(){
     mainContainer.className = "hide"; 
     expenseContainer.className = "container well";
     diffContainer.className = "hide";
+    amountArr.push(parseFloat(amount1.value));
+    amountArr.push(parseFloat(amount2.value));
+    amountArr.push(parseFloat(amount3.value));
+    amountArr.push(parseFloat(amount4.value));
 };
 function toIncome(){
     expenseContainer.className = "hide"; 
@@ -55,12 +81,9 @@ function toDiff(){
     diff.innerHTML = amountTtl - expAmountTtl;
     incomeTotal.innerHTML = amountTtl;
     expenseTotal.innerHTML = expAmountTtl;
-}
-var expamount1 = document.getElementById("expamount#1");
-var expamount2 = document.getElementById("expamount#2");
-var expamount3 = document.getElementById("expamount#3");
-var expamount4 = document.getElementById("expamount#4");
-var expAmountTotal = document.getElementById("expSum-total");
+    console.log(amountArr);
+};
+
 
 expamount1.addEventListener("input", add2);
 expamount2.addEventListener("input", add2);
