@@ -4,21 +4,39 @@ var amount3 = document.getElementById("amount#3");
 var amount4 = document.getElementById("amount#4");
 var amountTotal = document.getElementById("sum-total");
 var incAmount = document.getElementsByName("incAmount");
+var expAmount = document.getElementsByName("expAmount");
 var incAmountTotal = 0;
 
+
+// Income input function 
 for (var index = 0; index < incAmount.length; index++) {
     incAmount[index].addEventListener("input", add2);
     function add2() {
 
         for (var i = 0; i < incAmount.length; i++) {
             if (incAmount[i] != NaN){
-            amountArr2[i] = parseFloat(incAmount[i].value);
+            amountArr[i] = parseFloat(incAmount[i].value);
+            } if   {
+                amountArr[i] = 0;
             };
-        // incAmountTotal += parseFloat( incAmount[index].value) || 0;
         };
     };
 };
 
+// Expense Input function
+for (var index = 0; index < expAmount.length; index++) {
+    expAmount[index].addEventListener("input", expAdd);
+    function expAdd() {
+
+        for (var i = 0; i < expAmount.length; i++) {
+            if (expAmount[i] != NaN){
+            expAmountArr[i] = parseFloat(expAmount[i].value);
+            } else  {
+                expAmountArr[i] = 0;
+            };
+        };
+    };
+};
 
 amount1.addEventListener("input", add);
 amount2.addEventListener("input", add);
@@ -64,7 +82,7 @@ var mainIncome = document.getElementById("mainIncome");
 var mainExpense = document.getElementById("mainExpense");
 var inputAmount = document.getElementsByName("incAmount");
 var amountArr = [];
-var amountArr2 = [];
+var expAmountArr = [];
 
 
 //     amountArr = [].map.call(inputAmount, function( input ) {
@@ -82,10 +100,6 @@ function toExpenses(){
     expenseContainer.className = "container well";
     diffContainer.className = "hide";
     
-    amountArr.push(parseFloat(amount1.value));
-    amountArr.push(parseFloat(amount2.value));
-    amountArr.push(parseFloat(amount3.value));
-    amountArr.push(parseFloat(amount4.value));
 };
 function toIncome(){
     expenseContainer.className = "hide"; 
@@ -100,7 +114,7 @@ function toDiff(){
     incomeTotal.innerHTML = amountTtl;
     expenseTotal.innerHTML = expAmountTtl;
     console.log(amountArr);
-    alert(amountArr2);
+    alert(expAmountArr);
 };
 
 
