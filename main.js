@@ -3,6 +3,22 @@ var amount2 = document.getElementById("amount#2");
 var amount3 = document.getElementById("amount#3");
 var amount4 = document.getElementById("amount#4");
 var amountTotal = document.getElementById("sum-total");
+var incAmount = document.getElementsByName("incAmount");
+var incAmountTotal = 0;
+
+for (var index = 0; index < incAmount.length; index++) {
+    incAmount[index].addEventListener("input", add2);
+    function add2() {
+
+        for (var i = 0; i < incAmount.length; i++) {
+            if (incAmount[i] != NaN){
+            amountArr2[i] = parseFloat(incAmount[i].value);
+            };
+        // incAmountTotal += parseFloat( incAmount[index].value) || 0;
+        };
+    };
+};
+
 
 amount1.addEventListener("input", add);
 amount2.addEventListener("input", add);
@@ -48,6 +64,7 @@ var mainIncome = document.getElementById("mainIncome");
 var mainExpense = document.getElementById("mainExpense");
 var inputAmount = document.getElementsByName("incAmount");
 var amountArr = [];
+var amountArr2 = [];
 
 
 //     amountArr = [].map.call(inputAmount, function( input ) {
@@ -64,6 +81,7 @@ function toExpenses(){
     mainContainer.className = "hide"; 
     expenseContainer.className = "container well";
     diffContainer.className = "hide";
+    
     amountArr.push(parseFloat(amount1.value));
     amountArr.push(parseFloat(amount2.value));
     amountArr.push(parseFloat(amount3.value));
@@ -82,6 +100,7 @@ function toDiff(){
     incomeTotal.innerHTML = amountTtl;
     expenseTotal.innerHTML = expAmountTtl;
     console.log(amountArr);
+    alert(amountArr2);
 };
 
 
