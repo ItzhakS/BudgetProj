@@ -16,28 +16,18 @@ var incAmountTotal = 0;
 for (var index = 0; index < incAmount.length; index++) {
     incAmount[index].addEventListener("input", add3);
     function add3() {
-
         for (var i = 0; i < incAmount.length; i++) {
-            if (incAmount[i].value != NaN){
-            amountArr[i] = parseFloat(incAmount[i].value);
-            } else  {
-                amountArr[i] = 0;
-            };
+             amountArr[i] = parseFloat(incAmount[i].value) || 0;
         };
     };
 };
 
 // Expense Input function
-for (var index = 0; index < expAmount.length; index++) {
-    expAmount[index].addEventListener("input", expAdd);
+for (var i = 0; i < expAmount.length; i++) {
+    expAmount[i].addEventListener("input", expAdd);
     function expAdd() {
-
         for (var i = 0; i < expAmount.length; i++) {
-            if (expAmount[i].value != NaN){
-            expAmountArr[i] = parseFloat(expAmount[i].value);
-            } else  {
-                expAmountArr[i] = 0;
-            };
+            expAmountArr[i] = parseFloat(expAmount[i].value) || 0;
         };
     };
 };
@@ -100,6 +90,7 @@ function toExpenses(){
     mainContainer.className = "hide"; 
     expenseContainer.className = "container well";
     diffContainer.className = "hide";
+    console.log(amountArr);
     
 };
 function toIncome(){
@@ -114,7 +105,6 @@ function toDiff(){
     diff.innerHTML = amountTtl - expAmountTtl;
     incomeTotal.innerHTML = amountTtl;
     expenseTotal.innerHTML = expAmountTtl;
-    console.log(amountArr);
     alert(expAmountArr);
 };
 
