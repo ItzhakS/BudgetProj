@@ -2,6 +2,10 @@ var amount1 = document.getElementById("amount#1");
 var amount2 = document.getElementById("amount#2");
 var amount3 = document.getElementById("amount#3");
 var amount4 = document.getElementById("amount#4");
+var expamount1 = document.getElementById("expamount#1");
+var expamount2 = document.getElementById("expamount#2");
+var expamount3 = document.getElementById("expamount#3");
+var expamount4 = document.getElementById("expamount#4");
 var amountTotal = document.getElementById("sum-total");
 var incAmount = document.getElementsByName("incAmount");
 var expAmount = document.getElementsByName("expAmount");
@@ -10,13 +14,13 @@ var incAmountTotal = 0;
 
 // Income input function 
 for (var index = 0; index < incAmount.length; index++) {
-    incAmount[index].addEventListener("input", add2);
-    function add2() {
+    incAmount[index].addEventListener("input", add3);
+    function add3() {
 
         for (var i = 0; i < incAmount.length; i++) {
-            if (incAmount[i] != NaN){
+            if (incAmount[i].value != NaN){
             amountArr[i] = parseFloat(incAmount[i].value);
-            } if   {
+            } else  {
                 amountArr[i] = 0;
             };
         };
@@ -29,7 +33,7 @@ for (var index = 0; index < expAmount.length; index++) {
     function expAdd() {
 
         for (var i = 0; i < expAmount.length; i++) {
-            if (expAmount[i] != NaN){
+            if (expAmount[i].value != NaN){
             expAmountArr[i] = parseFloat(expAmount[i].value);
             } else  {
                 expAmountArr[i] = 0;
@@ -65,10 +69,7 @@ var amountTtl = 0
 var expAmountTtl = 0
 var incomeTotal = document.getElementById("incomeTotal");
 var expenseTotal = document.getElementById("expenseTotal");
-var expamount1 = document.getElementById("expamount#1");
-var expamount2 = document.getElementById("expamount#2");
-var expamount3 = document.getElementById("expamount#3");
-var expamount4 = document.getElementById("expamount#4");
+
 var expAmountTotal = document.getElementById("expSum-total");
 var incomeSrc1 = document.getElementById("incomeSrc1");
 var incomeSrc2 = document.getElementById("incomeSrc2");
