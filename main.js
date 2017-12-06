@@ -1,23 +1,19 @@
-var amount1 = document.getElementById("amount#1");
-var amount2 = document.getElementById("amount#2");
-var amount3 = document.getElementById("amount#3");
-var amount4 = document.getElementById("amount#4");
-var expamount1 = document.getElementById("expamount#1");
-var expamount2 = document.getElementById("expamount#2");
-var expamount3 = document.getElementById("expamount#3");
-var expamount4 = document.getElementById("expamount#4");
 var amountTotal = document.getElementById("sum-total");
 var incAmount = document.getElementsByName("incAmount");
 var expAmount = document.getElementsByName("expAmount");
 var incAmountTotal = 0;
 
-
+function addUp(a, b){
+    return a + b;
+};
 // Income input function 
 for (var index = 0; index < incAmount.length; index++) {
     incAmount[index].addEventListener("input", add3);
     function add3() {
         for (var i = 0; i < incAmount.length; i++) {
              amountArr[i] = parseFloat(incAmount[i].value) || 0;
+             incAmountTotal = amountArr.reduce(addUp);
+             amountTotal.innerHTML = incAmountTotal;
         };
     };
 };
@@ -28,22 +24,10 @@ for (var i = 0; i < expAmount.length; i++) {
     function expAdd() {
         for (var i = 0; i < expAmount.length; i++) {
             expAmountArr[i] = parseFloat(expAmount[i].value) || 0;
+            expAmountTtl = expAmountArr.reduce(addUp);
+            expAmountTotal.innerHTML = expAmountTtl;
         };
     };
-};
-
-amount1.addEventListener("input", add);
-amount2.addEventListener("input", add);
-amount3.addEventListener("input", add);
-amount4.addEventListener("input", add);
-
-function add(){
-    var num1 = parseFloat(amount1.value) || 0;
-    var num2 = parseFloat(amount2.value) || 0;
-    var num3 = parseFloat(amount3.value) || 0;
-    var num4 = parseFloat(amount4.value) || 0;
-    amountTotal.innerHTML = num1 + num2 + num3 + num4;
-    amountTtl = num1 + num2 + num3 + num4;
 };
 
 var expenseContainer = document.getElementById("expenseContainer");
@@ -55,23 +39,12 @@ var backBtn3 = document.getElementById("back-btn3");
 var calculate = document.getElementById("calculate-btn");
 var diffContainer = document.getElementById("diffContainer")
 var diff = document.getElementById("diff");
-var amountTtl = 0
 var expAmountTtl = 0
 var incomeTotal = document.getElementById("incomeTotal");
 var expenseTotal = document.getElementById("expenseTotal");
-
 var expAmountTotal = document.getElementById("expSum-total");
-var incomeSrc1 = document.getElementById("incomeSrc1");
-var incomeSrc2 = document.getElementById("incomeSrc2");
-var incomeSrc3 = document.getElementById("incomeSrc3");
-var incomeSrc4 = document.getElementById("incomeSrc4");
-var expenseName1 = document.getElementById("expenseName1");
-var expenseName2 = document.getElementById("expenseName2");
-var expenseName3 = document.getElementById("expenseName3");
-var expenseName4 = document.getElementById("expenseName4");
 var mainIncome = document.getElementById("mainIncome");
 var mainExpense = document.getElementById("mainExpense");
-var inputAmount = document.getElementsByName("incAmount");
 var amountArr = [];
 var expAmountArr = [];
 
@@ -102,26 +75,8 @@ function toDiff(){
     expenseContainer.className = "hide"; 
     mainContainer.className = "hide";
     diffContainer.className = "container well";
-    diff.innerHTML = amountTtl - expAmountTtl;
-    incomeTotal.innerHTML = amountTtl;
+    diff.innerHTML = incAmountTotal - expAmountTtl;
+    incomeTotal.innerHTML = incAmountTotal;
     expenseTotal.innerHTML = expAmountTtl;
     alert(expAmountArr);
 };
-
-
-expamount1.addEventListener("input", add2);
-expamount2.addEventListener("input", add2);
-expamount3.addEventListener("input", add2);
-expamount4.addEventListener("input", add2);
-
-function add2(){
-    var num1 = parseFloat(expamount1.value) || 0;
-    var num2 = parseFloat(expamount2.value) || 0;
-    var num3 = parseFloat(expamount3.value) || 0;
-    var num4 = parseFloat(expamount4.value) || 0;
-    expAmountTotal.innerHTML = num1 + num2 + num3 + num4;
-    return expAmountTtl = num1 + num2 + num3 + num4;
-};
-// for (var i = 0; i < 4; i++){
-//     var expamount[i]
-// }
