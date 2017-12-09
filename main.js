@@ -32,11 +32,32 @@ for (var i = 0; i < expAmount.length; i++) {
 
 var expenseContainer = document.getElementById("expenseContainer");
 var mainContainer = document.getElementById("mainContainer");
+
+// Button Handlers
 var nextBtn = document.getElementById("next-btn");
 var backBtn = document.getElementById("back-btn");
 var backBtn2 = document.getElementById("back-btn2");
 var backBtn3 = document.getElementById("back-btn3");
 var calculate = document.getElementById("calculate-btn");
+var addFeildInc = document.getElementById("add-btnI");
+var addFeildExp = document.getElementById("add-btnE");
+
+var input = document.createElement("input");
+input.setAttribute("id", "amount#5") ;
+input.setAttribute("name", "incAmount");
+input.setAttribute("placeholder", "Enter Amount");
+input.setAttribute("type", "number");
+    
+var incInputs = document.getElementById("incomeInputs");
+addFeildInc.addEventListener("click", addInputI);
+function addInputI(){
+    incInputs.innerHTML = "<input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="incAmount">";
+    incInputs.appendChild(input).className= "form-control" ;
+    incAmount = document.getElementsByName("incAmount");
+    
+};
+
+
 var diffContainer = document.getElementById("diffContainer")
 var diff = document.getElementById("diff");
 var expAmountTtl = 0
@@ -48,10 +69,6 @@ var mainExpense = document.getElementById("mainExpense");
 var amountArr = [];
 var expAmountArr = [];
 
-
-//     amountArr = [].map.call(inputAmount, function( input ) {
-//     return parseFloat(input.value);
-// });
  
 nextBtn.addEventListener("click", toExpenses);
 backBtn.addEventListener("click", toIncome);
@@ -63,8 +80,10 @@ function toExpenses(){
     mainContainer.className = "hide"; 
     expenseContainer.className = "container well";
     diffContainer.className = "hide";
-    console.log(amountArr);
-    
+    amountArr.sort(function(a , b){
+        return b - a;
+    });
+    console.log(amountArr[0]);
 };
 function toIncome(){
     expenseContainer.className = "hide"; 
