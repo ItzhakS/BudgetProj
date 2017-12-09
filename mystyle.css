@@ -27,13 +27,8 @@ h1 {
 #calculate-btn{
     margin-left: 43.5%;
 }
-#add-btn{
+#add-btnI, #add-btnE{
     border-radius: 50%;
-    float: right;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
+    margin-left: 43.5%;
 }
-/* #expenseContainer{
-    display: none;
-} 
- .hid:hover {
-    display: inline;
-} 
