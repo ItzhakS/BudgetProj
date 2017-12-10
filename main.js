@@ -18,6 +18,7 @@ for (var index = 0; index < incAmount.length; index++) {
     };
 };
 
+
 // Expense Input function
 for (var i = 0; i < expAmount.length; i++) {
     expAmount[i].addEventListener("input", expAdd);
@@ -51,7 +52,7 @@ input.setAttribute("type", "number");
 var incInputs = document.getElementById("incomeInputs");
 addFeildInc.addEventListener("click", addInputI);
 function addInputI(){
-    incInputs.innerHTML = "<input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="incAmount">";
+    // incInputs.innerHTML = "<input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="incAmount">";
     incInputs.appendChild(input).className= "form-control" ;
     incAmount = document.getElementsByName("incAmount");
     
@@ -67,7 +68,10 @@ var expAmountTotal = document.getElementById("expSum-total");
 var mainIncome = document.getElementById("mainIncome");
 var mainExpense = document.getElementById("mainExpense");
 var amountArr = [];
+var amountArr2 = [];
 var expAmountArr = [];
+var incomeSrc = document.getElementsByName("incomeSrc");
+var highest = 0;
 
  
 nextBtn.addEventListener("click", toExpenses);
@@ -80,10 +84,12 @@ function toExpenses(){
     mainContainer.className = "hide"; 
     expenseContainer.className = "container well";
     diffContainer.className = "hide";
-    amountArr.sort(function(a , b){
+    amountArr2 = amountArr.slice();
+    amountArr2.sort(function(a , b){
         return b - a;
     });
-    console.log(amountArr[0]);
+    console.log(amountArr2[0]);
+    
 };
 function toIncome(){
     expenseContainer.className = "hide"; 
@@ -97,5 +103,12 @@ function toDiff(){
     diff.innerHTML = incAmountTotal - expAmountTtl;
     incomeTotal.innerHTML = incAmountTotal;
     expenseTotal.innerHTML = expAmountTtl;
-    alert(expAmountArr);
+    console.log(expAmountArr);
+    console.log(amountArr2[0]);
+    highest = amountArr2.shift();
+    console.log(highest);
+    console.log(amountArr.indexOf(highest));
+    var a = amountArr.indexOf(highest);
+    mainIncome.innerHTML = incomeSrc[a].value;
 };
+ 
