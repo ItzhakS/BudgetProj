@@ -2,6 +2,24 @@ var amountTotal = document.getElementById("sum-total");
 var incAmount = document.getElementsByName("incAmount");
 var expAmount = document.getElementsByName("expAmount");
 var incAmountTotal = 0;
+var expenseContainer = document.getElementById("expenseContainer");
+var mainContainer = document.getElementById("mainContainer");
+var diffContainer = document.getElementById("diffContainer")
+var diff = document.getElementById("diff");
+var expAmountTtl = 0
+var incomeTotal = document.getElementById("incomeTotal");
+var expenseTotal = document.getElementById("expenseTotal");
+var expAmountTotal = document.getElementById("expSum-total");
+var mainIncome = document.getElementById("mainIncome");
+var mainExpense = document.getElementById("mainExpense");
+var amountArr = [];
+var amountArr2 = [];
+var expAmountArr = [];
+var expAmountArr2 = [];
+var incomeSrc = document.getElementsByName("incomeSrc");
+var expenseSrc = document.getElementsByName("expenseSrc");
+var highest = 0;
+var expHighest = 0;
 
 function addUp(a, b){
     return a + b;
@@ -31,8 +49,6 @@ for (var i = 0; i < expAmount.length; i++) {
     };
 };
 
-var expenseContainer = document.getElementById("expenseContainer");
-var mainContainer = document.getElementById("mainContainer");
 
 // Button Handlers
 var nextBtn = document.getElementById("next-btn");
@@ -43,6 +59,8 @@ var calculate = document.getElementById("calculate-btn");
 var addFeildInc = document.getElementById("add-btnI");
 var addFeildExp = document.getElementById("add-btnE");
 
+
+// Attempt at adding Feilds functionality
 var input = document.createElement("input");
 input.setAttribute("id", "amount#5") ;
 input.setAttribute("name", "incAmount");
@@ -57,23 +75,11 @@ function addInputI(){
     incAmount = document.getElementsByName("incAmount");
     
 };
+// End Attempt
 
 
-var diffContainer = document.getElementById("diffContainer")
-var diff = document.getElementById("diff");
-var expAmountTtl = 0
-var incomeTotal = document.getElementById("incomeTotal");
-var expenseTotal = document.getElementById("expenseTotal");
-var expAmountTotal = document.getElementById("expSum-total");
-var mainIncome = document.getElementById("mainIncome");
-var mainExpense = document.getElementById("mainExpense");
-var amountArr = [];
-var amountArr2 = [];
-var expAmountArr = [];
-var incomeSrc = document.getElementsByName("incomeSrc");
-var highest = 0;
 
- 
+// Button Event Listeners 
 nextBtn.addEventListener("click", toExpenses);
 backBtn.addEventListener("click", toIncome);
 backBtn2.addEventListener("click", toExpenses);
@@ -103,12 +109,25 @@ function toDiff(){
     diff.innerHTML = incAmountTotal - expAmountTtl;
     incomeTotal.innerHTML = incAmountTotal;
     expenseTotal.innerHTML = expAmountTtl;
+
+    // Find and Return highest Expense
+    expAmountArr2 = expAmountArr.slice();
+    expAmountArr2.sort(function(a , b){
+        return b - a;
+    });
+    expHighest =expAmountArr2.shift();
+    var b = expAmountArr.indexOf(expHighest);
+    mainexpense.innerHTML = expenseSrc[a].value + " (" + expHighest + ")" || "No Source Stated" + " (" + expHighest + ")";
+
+    // Control logs
     console.log(expAmountArr);
     console.log(amountArr2[0]);
-    highest = amountArr2.shift();
     console.log(highest);
     console.log(amountArr.indexOf(highest));
+
+    // Return highest Income
+    highest = amountArr2.shift();
     var a = amountArr.indexOf(highest);
-    mainIncome.innerHTML = incomeSrc[a].value;
+    mainIncome.innerHTML = incomeSrc[a].value + " (" + highest + ")" || "No Source Stated" + " (" + highest + ")";
 };
  
