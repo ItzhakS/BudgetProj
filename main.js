@@ -95,8 +95,8 @@ function toExpenses(){
         return b - a;
     });
     console.log(amountArr2[0]);
-    
 };
+
 function toIncome(){
     expenseContainer.className = "hide"; 
     mainContainer.className = "container well";
