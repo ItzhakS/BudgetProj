@@ -110,6 +110,11 @@ function toDiff(){
     incomeTotal.innerHTML = incAmountTotal;
     expenseTotal.innerHTML = expAmountTtl;
 
+    // Return highest Income
+    highest = amountArr2.shift();
+    var a = amountArr.indexOf(highest);
+    mainIncome.innerHTML = incomeSrc[a].value + " (" + highest + ")" || "No Source Stated" + " (" + highest + ")";
+
     // Find and Return highest Expense
     expAmountArr2 = expAmountArr.slice();
     expAmountArr2.sort(function(a , b){
@@ -125,9 +130,7 @@ function toDiff(){
     console.log(highest);
     console.log(amountArr.indexOf(highest));
 
-    // Return highest Income
-    highest = amountArr2.shift();
-    var a = amountArr.indexOf(highest);
-    mainIncome.innerHTML = incomeSrc[a].value + " (" + highest + ")" || "No Source Stated" + " (" + highest + ")";
+    
+    
 };
  
