@@ -17,7 +17,7 @@ var amountArr2 = [];
 var expAmountArr = [];
 var expAmountArr2 = [];
 var incomeSrc = document.getElementsByName("incomeSrc");
-var expenseSrc = document.getElementsByName("expenseSrc");
+var expenseSrc = document.getElementsByName("expense-name");
 var highest = 0;
 var expHighest = 0;
 
@@ -117,7 +117,7 @@ function toDiff(){
     });
     expHighest =expAmountArr2.shift();
     var b = expAmountArr.indexOf(expHighest);
-    mainexpense.innerHTML = expenseSrc[a].value + " (" + expHighest + ")" || "No Source Stated" + " (" + expHighest + ")";
+    mainExpense.innerHTML = expenseSrc[b].value + " (" + expHighest + ")" || "No Source Stated" + " (" + expHighest + ")";
 
     // Control logs
     console.log(expAmountArr);
