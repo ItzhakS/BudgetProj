@@ -20,21 +20,30 @@ var incomeSrc = document.getElementsByName("incomeSrc");
 var expenseSrc = document.getElementsByName("expense-name");
 var highest = 0;
 var expHighest = 0;
+var idN = 4;
+
+for (var index = 0; index < idN; index++) { 
+    var incInID = document.getElementById("amount#"+(index+1));
+    incInID.addEventListener("input", add3);
+};
 
 function addUp(a, b){
     return a + b;
 };
-// Income input function 
-for (var index = 0; index < incAmount.length; index++) {
-    incAmount[index].addEventListener("input", add3);
-    function add3() {
-        for (var i = 0; i < incAmount.length; i++) {
+function add3() {
+        for (var i = 0; i < idN; i++) {
+             incAmount = document.getElementsByName("incAmount");
              amountArr[i] = parseFloat(incAmount[i].value) || 0;
              incAmountTotal = amountArr.reduce(addUp);
              amountTotal.innerHTML = incAmountTotal;
+             
         };
     };
-};
+// Income input function 
+// for (var index = 0; index < incAmount.length; index++) {
+//     incAmount[index].addEventListener("input", add3);
+    
+// };
 
 
 // Expense Input function
@@ -61,19 +70,21 @@ var addFeildExp = document.getElementById("add-btnE");
 
 
 // Attempt at adding Feilds functionality
-var input = document.createElement("input");
-input.setAttribute("id", "amount#5") ;
-input.setAttribute("name", "incAmount");
-input.setAttribute("placeholder", "Enter Amount");
-input.setAttribute("type", "number");
     
 var incInputs = document.getElementById("incomeInputs");
 addFeildInc.addEventListener("click", addInputI);
 function addInputI(){
-    // incInputs.innerHTML = "<input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="incAmount">";
+    idN++
+    var input = document.createElement("input");
+    input.setAttribute("id", "amount#"+ idN) ;
+    input.setAttribute("name", "incAmount");
+    input.setAttribute("placeholder", "Enter Amount");
+    input.setAttribute("type", "number");
     incInputs.appendChild(input).className= "form-control" ;
-    incAmount = document.getElementsByName("incAmount");
-    
+    for (var index = 0; index < idN; index++) { 
+        var incInID = document.getElementById("amount#"+(index+1));
+        incInID.addEventListener("input", add3);
+    };
 };
 // End Attempt
 
