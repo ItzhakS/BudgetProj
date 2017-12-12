@@ -20,18 +20,23 @@ var incomeSrc = document.getElementsByName("incomeSrc");
 var expenseSrc = document.getElementsByName("expense-name");
 var highest = 0;
 var expHighest = 0;
-var idN = 4;
+var idIncomeN = 4;
+var idExpenseN = 4;
 
-for (var index = 0; index < idN; index++) { 
+//Income Input handlers
+for (var index = 0; index < idIncomeN; index++) { 
     var incInID = document.getElementById("amount#"+(index+1));
     incInID.addEventListener("input", add3);
 };
 
+// Sum of Inputs
 function addUp(a, b){
     return a + b;
 };
+
+// Income input function
 function add3() {
-        for (var i = 0; i < idN; i++) {
+        for (var i = 0; i < idIncomeN; i++) {
              incAmount = document.getElementsByName("incAmount");
              amountArr[i] = parseFloat(incAmount[i].value) || 0;
              incAmountTotal = amountArr.reduce(addUp);
@@ -39,7 +44,7 @@ function add3() {
              
         };
     };
-// Income input function 
+ 
 // for (var index = 0; index < incAmount.length; index++) {
 //     incAmount[index].addEventListener("input", add3);
     
@@ -47,16 +52,24 @@ function add3() {
 
 
 // Expense Input function
-for (var i = 0; i < expAmount.length; i++) {
-    expAmount[i].addEventListener("input", expAdd);
-    function expAdd() {
-        for (var i = 0; i < expAmount.length; i++) {
-            expAmountArr[i] = parseFloat(expAmount[i].value) || 0;
-            expAmountTtl = expAmountArr.reduce(addUp);
-            expAmountTotal.innerHTML = expAmountTtl;
-        };
+function expAdd() {
+    for (var i = 0; i < idExpenseN; i++) {
+        expAmount = document.getElementsByName("expAmount");
+        expAmountArr[i] = parseFloat(expAmount[i].value) || 0;
+        expAmountTtl = expAmountArr.reduce(addUp);
+        expAmountTotal.innerHTML = expAmountTtl;
     };
 };
+
+for (var index = 0; index < idExpenseN; index++) { 
+    var expInID = document.getElementById("expAmount#"+(index+1));
+    expInID.addEventListener("input", expAdd);
+};
+
+// for (var i = 0; i < expAmount.length; i++) {
+//     expAmount[i].addEventListener("input", expAdd);
+
+// };
 
 
 // Button Handlers
@@ -69,25 +82,71 @@ var addFeildInc = document.getElementById("add-btnI");
 var addFeildExp = document.getElementById("add-btnE");
 
 
-// Attempt at adding Feilds functionality
-    
+// <div class="form-group" id="amountName">
+//               <input type="text" class="form-control" id="incomeSrc1" placeholder="Enter Source" name="incomeSrc">
+
+// Add Feilds Income functionality
+var incAmountName = document.getElementById("amountName"); 
 var incInputs = document.getElementById("incomeInputs");
 addFeildInc.addEventListener("click", addInputI);
 function addInputI(){
-    idN++
+    idIncomeN++
     var input = document.createElement("input");
-    input.setAttribute("id", "amount#"+ idN) ;
+    input.setAttribute("id", "amount#"+ idIncomeN) ;
     input.setAttribute("name", "incAmount");
     input.setAttribute("placeholder", "Enter Amount");
     input.setAttribute("type", "number");
     incInputs.appendChild(input).className= "form-control" ;
-    for (var index = 0; index < idN; index++) { 
+    for (var index = 0; index < idIncomeN; index++) { 
         var incInID = document.getElementById("amount#"+(index+1));
         incInID.addEventListener("input", add3);
     };
-};
-// End Attempt
 
+    // Income Source Inputs
+    var inputSrc = document.createElement("input");
+    inputSrc.setAttribute("id", "incomeSrc"+ idIncomeN) ;
+    inputSrc.setAttribute("name", "incomeSrc");
+    inputSrc.setAttribute("placeholder", "Enter Source");
+    inputSrc.setAttribute("type", "text");
+    incAmountName.appendChild(inputSrc).className= "form-control" ;
+    incomeSrc = document.getElementsByName("incomeSrc");;
+};
+// End
+
+// Add feilds for Expenses
+// expenseName">
+// <input type="text" class="form-control" id="expenseName1" placeholder="Enter Expense" name="expense-name">
+
+
+var expenseName = document.getElementById("expenseName");
+var expenseInputs = document.getElementById("expenseInputs");
+addFeildExp.addEventListener("click", addInputE);
+function addInputE(){
+    idExpenseN++
+
+    // Expense Number Inputs
+    var inputNum = document.createElement("input");
+    inputNum.setAttribute("id", "expAmount#"+ idExpenseN) ;
+    inputNum.setAttribute("name", "expAmount");
+    inputNum.setAttribute("placeholder", "Enter Amount");
+    inputNum.setAttribute("type", "number");
+    expenseInputs.appendChild(inputNum).className= "form-control" ;
+    for (var index = 0; index < idExpenseN; index++) { 
+        var expInID = document.getElementById("expAmount#"+(index+1));
+        expInID.addEventListener("input", expAdd);
+    };
+
+    // Expense Source Inputs
+    var inputSrc = document.createElement("input");
+    inputSrc.setAttribute("id", "expenseName"+ idExpenseN) ;
+    inputSrc.setAttribute("name", "expense-name");
+    inputSrc.setAttribute("placeholder", "Enter Expense");
+    inputSrc.setAttribute("type", "text");
+    expenseName.appendChild(inputSrc).className= "form-control" ;
+    expenseSrc = document.getElementsByName("expense-name");
+    
+};
+// End
 
 
 // Button Event Listeners 
@@ -122,19 +181,26 @@ function toDiff(){
     expenseTotal.innerHTML = expAmountTtl;
 
     // Return highest Income
-    highest = amountArr2.shift();
+    highest = amountArr2.shift() || 0;
     var a = amountArr.indexOf(highest);
-    mainIncome.innerHTML = incomeSrc[a].value + " (" + highest + ")" || "No Source Stated" + " (" + highest + ")";
+    if (incomeSrc[a] == undefined){
+        mainIncome.innerHTML = "No Source Stated" + " (" + highest + ")";
+    }  else { 
+        mainIncome.innerHTML = incomeSrc[a].value + " (" + highest + ")";
+            };
 
     // Find and Return highest Expense
     expAmountArr2 = expAmountArr.slice();
     expAmountArr2.sort(function(a , b){
         return b - a;
     });
-    expHighest =expAmountArr2.shift();
+    expHighest =expAmountArr2.shift() || 0;
     var b = expAmountArr.indexOf(expHighest);
-    mainExpense.innerHTML = expenseSrc[b].value + " (" + expHighest + ")" || "No Source Stated" + " (" + expHighest + ")";
-
+    if ( expenseSrc[b] == undefined) {
+        mainExpense.innerHTML = "No Source Stated" + " (" + expHighest + ")";
+    } else {
+        mainExpense.innerHTML = expenseSrc[b].value + " (" + expHighest + ")";
+    };
     // Control logs
     console.log(expAmountArr);
     console.log(amountArr2[0]);
