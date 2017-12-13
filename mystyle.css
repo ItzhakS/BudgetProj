@@ -26,10 +26,18 @@ h1 {
     float: right;
 }
 #calculate-btn{
-    margin-left: 43.5%;
+    margin-left: 45.5%;
+    margin-top: 1.5%;
 }
 #add-btnI, #add-btnE{
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-    margin-left: 43.5%;
+    margin-left: 41.5%;
+}
+.buttonText{
+    margin-right: 1.5%;
+}
+#deleteBtnInc, #deleteBtnExp{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
+    margin-right: 0.5%;
 }

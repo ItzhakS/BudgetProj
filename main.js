@@ -80,6 +80,34 @@ var backBtn3 = document.getElementById("back-btn3");
 var calculate = document.getElementById("calculate-btn");
 var addFeildInc = document.getElementById("add-btnI");
 var addFeildExp = document.getElementById("add-btnE");
+var deleteBtnInc = document.getElementById("deleteBtnInc");
+var deleteBtnExp = document.getElementById("deleteBtnExp");
+
+nextBtn.addEventListener("click", toExpenses);
+backBtn.addEventListener("click", toIncome);
+backBtn2.addEventListener("click", toExpenses);
+backBtn3.addEventListener("click", toIncome);
+calculate.addEventListener("click", toDiff);
+deleteBtnInc.addEventListener("click", removeInputInc);
+deleteBtnExp.addEventListener("click", removeInputExp);
+
+function removeInputInc(){
+    var input = document.getElementById("amount#" + idIncomeN);
+    var incSource = document.getElementById("incomeSrc" + idIncomeN);
+    input.outerHTML = "";
+    incSource.outerHTML = "";
+    delete input, incSource;
+    idIncomeN--
+};
+function removeInputExp(){
+    var input = document.getElementById("expAmount#" + idExpenseN);
+    var expSource = document.getElementById("expenseName" + idExpenseN) 
+    input.outerHTML = "";
+    expSource.outerHTML = "";
+    delete input, expSource;
+    idExpenseN--
+
+};
 
 
 // <div class="form-group" id="amountName">
@@ -111,12 +139,6 @@ function addInputI() {
     incAmountName.appendChild(inputSrc).className = "form-control";
     incomeSrc = document.getElementsByName("incomeSrc");;
 };
-// End
-
-// Add feilds for Expenses
-// expenseName">
-// <input type="text" class="form-control" id="expenseName1" placeholder="Enter Expense" name="expense-name">
-
 
 var expenseName = document.getElementById("expenseName");
 var expenseInputs = document.getElementById("expenseInputs");
@@ -147,14 +169,6 @@ function addInputE() {
 
 };
 // End
-
-
-// Button Event Listeners 
-nextBtn.addEventListener("click", toExpenses);
-backBtn.addEventListener("click", toIncome);
-backBtn2.addEventListener("click", toExpenses);
-backBtn3.addEventListener("click", toIncome);
-calculate.addEventListener("click", toDiff)
 
 function toExpenses() {
     mainContainer.className = "hide";
