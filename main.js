@@ -26,7 +26,7 @@ var idExpenseN = 4;
 //Income Input handlers
 for (var index = 0; index < idIncomeN; index++) {
     var incInID = document.getElementById("amount#" + (index + 1));
-    incInID.addEventListener("input", add3);
+    incInID.addEventListener("input", addIncome);
 };
 
 // Sum of Inputs
@@ -35,7 +35,7 @@ function addUp(a, b) {
 };
 
 // Income input function
-function add3() {
+function addIncome() {
     for (var i = 0; i < idIncomeN; i++) {
         incAmount = document.getElementsByName("incAmount");
         amountArr[i] = parseFloat(incAmount[i].value) || 0;
@@ -45,14 +45,8 @@ function add3() {
     };
 };
 
-// for (var index = 0; index < incAmount.length; index++) {
-//     incAmount[index].addEventListener("input", add3);
-
-// };
-
-
 // Expense Input function
-function expAdd() {
+function addExpenses() {
     for (var i = 0; i < idExpenseN; i++) {
         expAmount = document.getElementsByName("expAmount");
         expAmountArr[i] = parseFloat(expAmount[i].value) || 0;
@@ -63,11 +57,11 @@ function expAdd() {
 
 for (var index = 0; index < idExpenseN; index++) {
     var expInID = document.getElementById("expAmount#" + (index + 1));
-    expInID.addEventListener("input", expAdd);
+    expInID.addEventListener("input", addExpenses);
 };
 
 // for (var i = 0; i < expAmount.length; i++) {
-//     expAmount[i].addEventListener("input", expAdd);
+//     expAmount[i].addEventListener("input", addExpenses);
 
 // };
 
@@ -109,11 +103,6 @@ function removeInputExp(){
 
 };
 
-
-// <div class="form-group" id="amountName">
-//               <input type="text" class="form-control" id="incomeSrc1" placeholder="Enter Source" name="incomeSrc">
-
-// Add Feilds Income functionality
 var incAmountName = document.getElementById("amountName");
 var incInputs = document.getElementById("incomeInputs");
 addFeildInc.addEventListener("click", addInputI);
@@ -127,7 +116,7 @@ function addInputI() {
     incInputs.appendChild(input).className = "form-control";
     for (var index = 0; index < idIncomeN; index++) {
         var incInID = document.getElementById("amount#" + (index + 1));
-        incInID.addEventListener("input", add3);
+        incInID.addEventListener("input", addIncome);
     };
 
     // Income Source Inputs
@@ -146,7 +135,6 @@ addFeildExp.addEventListener("click", addInputE);
 function addInputE() {
     idExpenseN++
 
-    // Expense Number Inputs
     var inputNum = document.createElement("input");
     inputNum.setAttribute("id", "expAmount#" + idExpenseN);
     inputNum.setAttribute("name", "expAmount");
@@ -155,10 +143,9 @@ function addInputE() {
     expenseInputs.appendChild(inputNum).className = "form-control";
     for (var index = 0; index < idExpenseN; index++) {
         var expInID = document.getElementById("expAmount#" + (index + 1));
-        expInID.addEventListener("input", expAdd);
+        expInID.addEventListener("input", addExpenses);
     };
 
-    // Expense Source Inputs
     var inputSrc = document.createElement("input");
     inputSrc.setAttribute("id", "expenseName" + idExpenseN);
     inputSrc.setAttribute("name", "expense-name");
@@ -168,7 +155,6 @@ function addInputE() {
     expenseSrc = document.getElementsByName("expense-name");
 
 };
-// End
 
 function toExpenses() {
     mainContainer.className = "hide";
@@ -202,7 +188,10 @@ function findHighestIncome() {
     });
     highest = amountArr2.shift() || 0;
     var a = amountArr.indexOf(highest);
-    if (incomeSrc[a].value === "") {
+    if (incAmountTotal == 0){
+        mainIncome.innerHTML = "No Income";
+    }
+    else if (incomeSrc[a].value === "") {
         mainIncome.innerHTML = "No Source Stated" + " (" + highest + ")";
     }
     else {
@@ -217,7 +206,10 @@ function findHighestExpense() {
     });
     expHighest = expAmountArr2.shift() || 0;
     var b = expAmountArr.indexOf(expHighest);
-    if (expenseSrc[b].value === "") {
+    if (expAmountTtl == 0){
+        mainExpense.innerHTML = "No Expenses";
+    }
+    else if (expenseSrc[b].value === "") {
         mainExpense.innerHTML = "No Source Stated" + " (" + expHighest + ")";
     }
     else {
