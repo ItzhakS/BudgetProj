@@ -7,24 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Budge</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="mystyle.css">
+  <link rel="stylesheet" href="style/mystyle.css">
   <link rel="icon" type="image/png" href="favicon.ico">
   <meta name="description" content="Free Budgeting tool">
   <meta name="keywords" content="Free Budgeting tool, save, spend, how to budget, monthly budget">
 </head>
 
 <body>
-  <header class="text-center">
-  <h1>Just Budge It</h1>
-  <h4>Free Budgeting Tool</h4>
-</header>
-<div id="welcome">
-  <h2>Welcome!</h2>
-  <h3>Just Budge It...</h3>
-  <p>This is your new Motto. The path to succesful financial autonomy is *drum roll please* Budgeting. That's right, away with your wanton spending. All your hard-earned income should be directed carefully towards specific expenses. If your expenses out-weigh your income, you need to cut back and spend less... Or get a higher paying job.</p>
-  <p>In the next window enter your different income sources and their corresponding amounts. Then enter your expenses. Lastly you will find the difference between your income and expenses, as well as the main sources of income and expense.</p>
-<button class="btn btn-primary" id="startBtn">Start</button>
-</div>
+  <header class="navbar navbar-default navbar-fixed-top">
+    <img src="images/BudgeLogo.png">
+  </header><!-- <header class="text-center">
+    <h1>Just Budge It</h1>
+    <h4>Free Budgeting Tool</h4>
+  </header> -->
+  <div id="welcome">
+    <h2>Welcome!</h2>
+    <h3>Just Budge It...</h3>
+    <p>This is your new Motto. The path to succesful financial autonomy is *drum roll please* Budgeting. That's right, away
+      with your wanton spending. All your hard-earned income should be directed carefully towards specific expenses. If your
+      expenses out-weigh your income, you need to cut back and spend less... Or get a higher paying job.</p>
+    <p>In the next window enter your different income sources and their corresponding amounts. Then enter your expenses. Lastly
+      you will find the difference between your income and expenses, as well as the main sources of income and expense.</p>
+    <button class="btn btn-primary" id="startBtn">Start</button>
+  </div>
 
   <div class="container well hide" id="mainContainer">
     <h2 class="text-center">Income</h2>
@@ -58,7 +63,10 @@
       <span class="glyphicon glyphicon-plus"></span>
     </button>
     <span class="buttonText">Add Field</span>
-    <button class="btn btn-danger" id="deleteBtnInc"><span class="glyphicon glyphicon-minus"></span></button><span>Delete Field</span>
+    <button class="btn btn-danger" id="deleteBtnInc">
+      <span class="glyphicon glyphicon-minus"></span>
+    </button>
+    <span>Delete Field</span>
     <br>
     <p class="lead text-center">Total:
       <span id="sum-total"></span>
@@ -149,4 +157,4 @@
 <!-- Bootstrap Jquery link -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Main JS File -->
-<script src="main.js"></script>
+<script src="script/main.js"></script>
