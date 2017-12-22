@@ -61,14 +61,7 @@ for (var index = 0; index < idExpenseN; index++) {
     expInID.addEventListener("input", addExpenses);
 };
 
-// for (var i = 0; i < expAmount.length; i++) {
-//     expAmount[i].addEventListener("input", addExpenses);
-
-// };
-
-
 // Button Handlers
-var startButton = document.getElementById("startBtn");
 var nextBtn = document.getElementById("next-btn");
 var backBtn = document.getElementById("back-btn");
 var backBtn2 = document.getElementById("back-btn2");
@@ -79,7 +72,6 @@ var addFeildExp = document.getElementById("add-btnE");
 var deleteBtnInc = document.getElementById("deleteBtnInc");
 var deleteBtnExp = document.getElementById("deleteBtnExp");
 
-startButton.addEventListener("click", startBudgeting)
 nextBtn.addEventListener("click", toExpenses);
 backBtn.addEventListener("click", toIncome);
 backBtn2.addEventListener("click", toExpenses);
@@ -88,10 +80,6 @@ calculate.addEventListener("click", toDiff);
 deleteBtnInc.addEventListener("click", removeInputInc);
 deleteBtnExp.addEventListener("click", removeInputExp);
 
-function startBudgeting (){
-    welcomeContainer.className = "hide";
-    mainContainer.className = "container well";
-}
 
 function removeInputInc(){
     var input = document.getElementById("amount#" + idIncomeN);
