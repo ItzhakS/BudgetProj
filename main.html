@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Budge</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style/mystyle.css">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <meta name="description" content="Free Budgeting tool">
+  <!-- Bootstrap Jquery link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
+  <!-- Main JS File -->
+  <script src="script/main.js" defer></script>
+  <meta name="keywords" content="Free Budgeting tool, save, spend, how to budget, monthly budget">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" ><img id="logo" src="images/BudgeLogo.png"></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Welcome</a></li>
+          <li class="active"><a href="#">Budge It</a></li>
+        </ul>
+        </div>
+  </header>
+    <h1 class="text-center">Just Budge It</h1>
+    <h4 class="text-center">Free Budgeting Tool</h4>
+  <div class="container well" id="mainContainer">
+    <h2 class="text-center">Income</h2>
+    <div class="container">
+      <div class="row">
+        <div class="column-md-6 col-sm-6 col-xs-6" id="srcColumn">
+          <h4>Source</h4>
+          <form>
+            <div class="form-group" id="amountName">
+              <input type="text" class="form-control" id="incomeSrc1" placeholder="Enter Source" name="incomeSrc">
+              <input type="text" class="form-control" id="incomeSrc2" placeholder="Enter Source" name="incomeSrc">
+              <input type="text" class="form-control" id="incomeSrc3" placeholder="Enter Source" name="incomeSrc">
+              <input type="text" class="form-control" id="incomeSrc4" placeholder="Enter Source" name="incomeSrc">
+            </div>
+          </form>
+        </div>
+        <div class="column-md-6 col-sm-6 col-xs-6" id="amntColumn">
+          <h4>Amount</h4>
+          <form>
+            <div class="form-group" id="incomeInputs">
+              <input type="number" class="form-control" id="amount#1" placeholder="Enter Amount" name="incAmount">
+              <input type="number" class="form-control" id="amount#2" placeholder="Enter Amount" name="incAmount">
+              <input type="number" class="form-control" id="amount#3" placeholder="Enter Amount" name="incAmount">
+              <input type="number" class="form-control" id="amount#4" placeholder="Enter Amount" name="incAmount">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success" id="add-btnI">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+    <span class="buttonText">Add Field</span>
+    <button class="btn btn-danger" id="deleteBtnInc">
+      <span class="glyphicon glyphicon-minus"></span>
+    </button>
+    <span>Delete Field</span>
+    <br>
+    <p class="lead text-center">Total:
+      <span id="sum-total"></span>
+    </p>
+    <button class="btn btn-default" id="next-btn">Next-
+      <small> To Expenses</small>
+    </button>
+  </div>
+  <div class="container well hide" id="expenseContainer">
+    <h2 class="text-center">Expenses</h2>
+    <div class="container">
+      <div class="row">
+        <div class="column-md-6 col-sm-6 col-xs-6" id="srcColumn">
+          <h4>Expense</h4>
+          <form>
+            <div class="form-group" id="expenseName">
+              <input type="text" class="form-control" id="expenseName1" placeholder="Enter Expense" name="expense-name">
+              <input type="text" class="form-control" id="expenseName2" placeholder="Enter Expense" name="expense-name">
+              <input type="text" class="form-control" id="expenseName3" placeholder="Enter Expense" name="expense-name">
+              <input type="text" class="form-control" id="expenseName4" placeholder="Enter Expense" name="expense-name">
+            </div>
+          </form>
+        </div>
+        <div class="column-md-6 col-sm-6 col-xs-6" id="amntColumn">
+          <h4>Amount</h4>
+          <form>
+            <div class="form-group" id="expenseInputs">
+              <input type="number" class="form-control" id="expAmount#1" placeholder="Enter Amount" name="expAmount">
+              <input type="number" class="form-control" id="expAmount#2" placeholder="Enter Amount" name="expAmount">
+              <input type="number" class="form-control" id="expAmount#3" placeholder="Enter Amount" name="expAmount">
+              <input type="number" class="form-control" id="expAmount#4" placeholder="Enter Amount" name="expAmount">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success" id="add-btnE">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+    <span class="buttonText">Add Field</span>
+    <button class="btn btn-danger" id="deleteBtnExp">
+      <span class="glyphicon glyphicon-minus"></span>
+    </button>
+    <span>Delete Field</span>
+    <br>
+    <button class="btn btn-primary" id="calculate-btn">Calculate</button>
+    <br>
+    <p class="lead text-center">Total:
+      <span id="expSum-total"></span>
+    </p>
+    <button class="btn btn-default" id="back-btn">Back-
+      <small> To Income</small>
+    </button>
+  </div>
+  <div class="container well hide" id="diffContainer">
+    <h2 class="text-center">Difference</h2>
+    <p class="lead text-center">Total Income:
+      <span id="incomeTotal"></span>
+      <p class="text-center">Main Income:
+        <span id="mainIncome"></span>
+      </p>
+    </p>
+    <p class="lead text-center">Total Expenses:
+      <span id="expenseTotal"></span>
+      <p class="text-center">Main Expense:
+        <span id="mainExpense"></span>
+      </p>
+    </p>
+    <p class="lead text-center">Difference:
+      <span id="diff"></span>
+    </p>
+    <br>
+    <button class="btn btn-default" id="back-btn3">Back-
+      <small> To Income</small>
+    </button>
+    <button class="btn btn-default" id="back-btn2">Back-
+      <small> To Expenses</small>
+    </button>
+  </div>
+  <footer class="footer">
+    <p class="text-center">Created by
+      <a href="https://github.com/ItzhakS" target="_blank">
+        <strong>Itzhak Shachnovitz</strong>
+      </a>
+    </p>
+  </footer>
+</body>
+</html>
