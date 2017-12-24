@@ -11,7 +11,9 @@
   <link rel="icon" type="image/png" href="images/favicon.ico">
   <meta name="description" content="Free Budgeting tool">
   <!-- Bootstrap Jquery link -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" async></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
   <!-- Main JS File -->
   <script src="script/main.js" defer></script>
   <meta name="keywords" content="Free Budgeting tool, save, spend, how to budget, monthly budget">
@@ -19,7 +21,7 @@
 
 <body>
   <header>
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -27,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-              <a href="#" ><img id="logo" src="images/BudgeLogo.png"></a>
+              <a href="index.html" ><img id="logo" src="images/BudgeLogo.png"></a>
             </div>
             <div class="collapse navbar-collapse" >
             <ul class="nav navbar-nav navbar-right">
@@ -43,7 +45,7 @@
     <h2 class="text-center">Income</h2>
     <div class="container">
       <div class="row">
-        <div class="column-md-6 col-sm-6 col-xs-6" id="srcColumn">
+        <div class="col-md-6 col-sm-6 col-xs-6" id="srcColumn">
           <h4>Source</h4>
           <form>
             <div class="form-group" id="amountName">
@@ -54,7 +56,7 @@
             </div>
           </form>
         </div>
-        <div class="column-md-6 col-sm-6 col-xs-6" id="amntColumn">
+        <div class="col-md-6 col-sm-6 col-xs-6" id="amntColumn">
           <h4>Amount</h4>
           <form>
             <div class="form-group" id="incomeInputs">
@@ -87,7 +89,7 @@
     <h2 class="text-center">Expenses</h2>
     <div class="container">
       <div class="row">
-        <div class="column-md-6 col-sm-6 col-xs-6" id="srcColumn">
+        <div class="col-md-6 col-sm-6 col-xs-6" id="srcColumn">
           <h4>Expense</h4>
           <form>
             <div class="form-group" id="expenseName">
@@ -98,7 +100,7 @@
             </div>
           </form>
         </div>
-        <div class="column-md-6 col-sm-6 col-xs-6" id="amntColumn">
+        <div class="col-md-6 col-sm-6 col-xs-6" id="amntColumn">
           <h4>Amount</h4>
           <form>
             <div class="form-group" id="expenseInputs">
@@ -154,7 +156,7 @@
       <small> To Expenses</small>
     </button>
   </div>
-  <footer class="footer">
+  <footer class="footer fixed-bottom">
     <p class="text-center">Created by
       <a href="https://github.com/ItzhakS" target="_blank">
         <strong>Itzhak Shachnovitz</strong>
