@@ -75,7 +75,7 @@ h1 {
 
 .footer{
     background-color: #35880f;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     width: 100%;
     height: 35px;
