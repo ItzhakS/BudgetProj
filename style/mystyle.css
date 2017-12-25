@@ -1,5 +1,11 @@
+#logo {
+    height: 6.5em;
+}
+#benefitsHeading {
+    color: #5cb85c;
+}
 .footer{
-    background-color: #35880f;
+    background-color: #5cb85c;
     position: relative;
     bottom: 0;
     margin-top: 15px;
@@ -51,9 +57,13 @@
         font-size: 3rem;
         font-style: italic;
     }
+    #benefitsHeading {
+        color: #5cb85c;
+    }
     #benefitsDiv {
         float: right;
         margin-right: 10%;
+        color: #5cb85c;
     }
     #welcome {
         margin-left: 5%;
@@ -102,7 +112,7 @@
     }
 
     .footer{
-        background-color: #35880f;
+        background-color: #52b952; /* #5cb85c */
         position: absolute;
         bottom: 0;
         margin-top: 15px;
