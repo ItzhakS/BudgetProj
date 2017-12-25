@@ -1,93 +1,9 @@
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* background-color: rgba(109, 226, 12, 0.88);
-    background: linear-gradient(-45deg, #85bb65, #216C2A);
-    background-repeat: no-repeat; */
-/* Money color background-color: #85bb65 #216C2A; */
-}
-
-    
-.navbar{
-    height: 80px;
-}
-#logo {
-    height: 90px;
-    margin-left: 20%;
-}
-h1 {
-    font-size: 8rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.blockquote {
-    color: #265d0c;
-}
-#free {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 3rem;
-    font-style: italic;
-}
-#benefitsDiv {
-    float: right;
-    margin-right: 10%;
-}
-#welcome {
-    margin-left: 5%;
-    color: #000000;
-    /* #265d0c */
-    /* margin-right: 55%;  */
-    margin-bottom: 40px;
-}
-#mainContainer{
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-    margin-bottom: 50px;
-}
-#expenseContainer{
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-    margin-bottom: 50px;
-}
-#diffContainer{
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-    margin-bottom: 50px;
-}
-#amounth4{
-    margin-left: 5%;
-}
-#srcColumn, #amntColumn {
-    padding-right: 28px;
-    padding-left: 0px;
-}
-#next-btn {
-    float: right;
-}
-#calculate-btn{
-    margin-left: 45.5%;
-    margin-top: 1.5%;
-}
-#add-btnI, #add-btnE{
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-    margin-left: 41.5%;
-}
-.buttonText{
-    margin-right: 1.5%;
-}
-#deleteBtnInc, #deleteBtnExp{
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-    margin-right: 0.5%;
-}
-
 .footer{
     background-color: #35880f;
-    position: fixed;
+    position: relative;
     bottom: 0;
     margin-top: 15px;
+    margin-bottom: 0px;
     width: 100%;
     height: 35px;
 }
@@ -96,4 +12,109 @@ h1 {
 }
 .footer a{
     color: #000000;
+}
+
+/* For tablets and desktops/laptops */
+@media only screen and (min-width: 768px) {
+    html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        /* background-color: rgba(109, 226, 12, 0.88);
+        background: linear-gradient(-45deg, #85bb65, #216C2A);
+        background-repeat: no-repeat; */
+    /* Money color background-color: #85bb65 #216C2A; */
+    }
+
+        
+    .navbar{
+        height: 80px;
+    }
+    #logo {
+        height: 90px;
+        margin-left: 20%;
+    }
+    h1 {
+        font-size: 8rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .blockquote {
+        color: #265d0c;
+    }
+    #free {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 3rem;
+        font-style: italic;
+    }
+    #benefitsDiv {
+        float: right;
+        margin-right: 10%;
+    }
+    #welcome {
+        margin-left: 5%;
+        color: #000000;
+        /* #265d0c */
+        /* margin-right: 55%;  */
+        margin-bottom: 40px;
+    }
+    #mainContainer{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
+        margin-bottom: 50px;
+    }
+    #expenseContainer{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
+        margin-bottom: 50px;
+    }
+    #diffContainer{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
+        margin-bottom: 50px;
+    }
+    #amounth4{
+        margin-left: 5%;
+    }
+    #srcColumn, #amntColumn {
+        padding-right: 28px;
+        padding-left: 0px;
+    }
+    #next-btn {
+        float: right;
+    }
+    #calculate-btn{
+        margin-left: 45.5%;
+        margin-top: 1.5%;
+    }
+    #add-btnI, #add-btnE{
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
+        margin-left: 41.5%;
+    }
+    .buttonText{
+        margin-right: 1.5%;
+    }
+    #deleteBtnInc, #deleteBtnExp{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
+        margin-right: 0.5%;
+    }
+
+    .footer{
+        background-color: #35880f;
+        position: absolute;
+        bottom: 0;
+        margin-top: 15px;
+        margin-bottom: 0;
+        width: 100%;
+        height: 35px;
+    }
+    .footer p {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+    .footer a{
+        color: #000000;
+    }
 }
