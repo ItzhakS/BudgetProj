@@ -1,8 +1,19 @@
 #logo {
     height: 6.5em;
 }
-#benefitsHeading {
+.blockquote {
+    color: #265d0c;
+}
+#free {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+    font-style: italic;
+}
+#benefitsDiv {
     color: #5cb85c;
+}
+#benefitsHeading {
+    color: #265d0c;
 }
 .footer{
     background-color: #5cb85c;
@@ -61,6 +72,7 @@
         color: #5cb85c;
     }
     #benefitsDiv {
+        border-left: 1px solid #265d0c;
         float: right;
         margin-right: 10%;
         color: #5cb85c;
