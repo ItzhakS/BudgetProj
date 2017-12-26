@@ -75,13 +75,13 @@
         border-left: 1px solid #265d0c;
         float: right;
         margin-right: 10%;
+        margin-left: 10%;
         color: #5cb85c;
     }
     #welcome {
         margin-left: 5%;
         color: #000000;
         /* #265d0c */
-        /* margin-right: 55%;  */
         margin-bottom: 40px;
     }
     #mainContainer{
