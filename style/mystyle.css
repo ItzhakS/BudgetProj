@@ -15,6 +15,19 @@
 #benefitsHeading {
     color: #265d0c;
 }
+#add-btnI, #add-btnE{
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.59) ;
+}
+.buttonText{
+    margin-left: 16%;
+}
+#deleteBtnInc, #deleteBtnExp{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.59) ;
+}
+#calculate-btn{
+    margin-left: 36.5%;
+    margin-top: 1.5%;
+}
 .footer{
     background-color: #5cb85c;
     position: relative;
@@ -82,7 +95,7 @@
         margin-left: 5%;
         color: #000000;
         /* #265d0c */
-        margin-bottom: 40px;
+        margin-bottom: 10%;
     }
     #mainContainer{
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
@@ -90,7 +103,6 @@
     }
     #expenseContainer{
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-        margin-bottom: 50px;
     }
     #diffContainer{
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
@@ -111,16 +123,14 @@
         margin-top: 1.5%;
     }
     #add-btnI, #add-btnE{
-        border-radius: 50%;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-        margin-left: 41.5%;
+        box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.59) ;
     }
     .buttonText{
-        margin-right: 1.5%;
+        margin-left: 41%;
     }
     #deleteBtnInc, #deleteBtnExp{
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.59) ;
-        margin-right: 0.5%;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.59) ;
+       
     }
 
     .footer{
