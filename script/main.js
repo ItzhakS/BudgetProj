@@ -87,7 +87,9 @@ function removeInputInc(){
     input.outerHTML = "";
     incSource.outerHTML = "";
     delete input, incSource;
-    idIncomeN--
+    --idIncomeN;
+    amountArr.pop();
+    addIncome();
 };
 function removeInputExp(){
     var input = document.getElementById("expAmount#" + idExpenseN);
@@ -95,7 +97,9 @@ function removeInputExp(){
     input.outerHTML = "";
     expSource.outerHTML = "";
     delete input, expSource;
-    idExpenseN--
+    idExpenseN--;
+    expAmountArr.pop();
+    addExpenses();
 
 };
 
