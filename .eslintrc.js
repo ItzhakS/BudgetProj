@@ -6,7 +6,7 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            "indent"
+            "4"
         ],
         "linebreak-style": [
             "error",
